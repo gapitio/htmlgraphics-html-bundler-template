@@ -2,28 +2,11 @@ import { nodeResolve } from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import livereload from "rollup-plugin-livereload";
-import { optimize } from "svgo";
 import json from "@rollup/plugin-json";
 import postcss from "rollup-plugin-postcss";
-import { svgoConfig } from "./svgo.config";
+import html from "rollup-plugin-html";
 
 const OUT_DIR = "public/build";
-
-function svgo(options) {
-  return {
-    name: "svgo",
-    // eslint-disable-next-line consistent-return
-    transform: (code, id) => {
-      if (id.endsWith(".svg")) {
-        const result = optimize(code, { path: id, ...options });
-        return {
-          map: { mappings: "" },
-          code: `export default ${JSON.stringify(result.data)}`,
-        };
-      }
-    },
-  };
-}
 
 // eslint-disable-next-line import/no-default-export
 export default [
@@ -38,7 +21,9 @@ export default [
       clearScreen: false,
     },
     plugins: [
-      svgo(svgoConfig),
+      html({
+        include: "src/html.html",
+      }),
       json({
         preferConst: true,
       }),

@@ -17,7 +17,6 @@ Bundler to make developing code easier and scalable.
 - [Prettier](https://prettier.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [ESLint](https://eslint.org/)
-- [SVGO](https://github.com/svg/svgo)
 - Local development server to run the code live in the browser.
 
 ## Usage
@@ -34,7 +33,7 @@ Then you start the development script
 npm run dev
 ```
 
-Go to <http://localhost:5000>. Change some code in `./src/onInit.ts`, `./src/onRender.ts`, and `./src/design/svgData.svg`, and the website will update.
+Go to <http://localhost:5000>. Change some code in `./src/onInit.ts`, `./src/onRender.ts`, or `./src/design/html.html`, and the website will update.
 
 When the code is ready to be uploaded to Grafana, start the build script
 
