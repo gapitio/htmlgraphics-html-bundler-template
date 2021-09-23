@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { existsSync, readFileSync, writeFileSync } from "fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 // eslint-disable-next-line import/extensions
 import { defaultPanelOptions } from "../panelOptions.config.js";
 
