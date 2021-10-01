@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "fs";
 
 const IN_PATH = "src/html.html";
 const OUT_PATH = "dist/html.html";

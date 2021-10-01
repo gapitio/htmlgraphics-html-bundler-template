@@ -1,4 +1,4 @@
-import { writeFileSync, readFileSync } from "node:fs";
+import { writeFileSync, readFileSync } from "fs";
 
 const IN_PATH = "src/custom-properties.json";
 const OUT_PATH = "dist/custom-properties.json";

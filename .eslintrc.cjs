@@ -36,6 +36,9 @@ module.exports = {
     // Common abbreviations are known and readable
     "unicorn/prevent-abbreviations": "off",
 
+    // node:fs only works on v16+ of Node
+    "unicorn/prefer-node-protocol": "off",
+
     "unicorn/filename-case": [
       "error",
       {
