@@ -53,7 +53,7 @@ jobs:
       - name: Package plugin
         id: package-plugin
         run: |
-          cp dist ${{ steps.metadata.outputs.name }}
+          cp dist ${{ steps.metadata.outputs.name }} -r
           zip ${{ steps.metadata.outputs.out-zip-file }} ${{ steps.metadata.outputs.name }} -r
 
       - name: Create release
