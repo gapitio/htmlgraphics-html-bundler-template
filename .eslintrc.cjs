@@ -38,7 +38,6 @@ module.exports = {
         selector: "WithStatement",
       },
     ],
-    "react/no-array-index-key": "off",
     "unicorn/filename-case": [
       "error",
       { cases: { camelCase: true, pascalCase: true, kebabCase: true } },
