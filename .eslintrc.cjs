@@ -46,7 +46,6 @@ module.exports = {
     "unicorn/prefer-module": "off",
     "unicorn/prefer-node-protocol": "off",
     "unicorn/prevent-abbreviations": "off", // Common abbreviations are known and readable
-    "unicorn/no-empty-file": "off",
   },
   overrides: [
     {
