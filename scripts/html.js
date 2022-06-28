@@ -6,7 +6,6 @@ const OUT_PATH = "dist/html.html";
 const writeHTML = () => {
   const html = readFileSync(IN_PATH, "utf8");
   writeFileSync(OUT_PATH, html);
-  // eslint-disable-next-line no-console
   console.log(`Successfully written ${OUT_PATH}`);
 };
 

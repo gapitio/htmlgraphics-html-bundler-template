@@ -8,7 +8,6 @@ import html from "rollup-plugin-html";
 
 const OUT_DIR = "public/build";
 
-// eslint-disable-next-line import/no-default-export
 export default [
   {
     input: "src/devSite/index.ts",
