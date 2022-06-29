@@ -1,17 +1,22 @@
+<!-- ONLY USED DURING DEV -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/src/devSite/assets/favicon.png"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Htmlgraphics bundler</title>
-    <link rel="icon" href="./favicon.png" />
-    <link href="./style.css" rel="stylesheet" />
-    <script defer src="./build/index.js"></script>
-    <script defer src="./build/onInit.js"></script>
-    <script defer src="./build/onRender.js"></script>
+    <link href="/src/devSite/assets/style.css" rel="stylesheet" />
   </head>
-
   <body>
+    <script type="module" src="/src/devSite/index.ts"></script>
+    <script type="module" src="/src/onInit.ts"></script>
+    <script type="module" src="/src/onRender.ts"></script>
     <header>
       <div id="header-right-container">
         <div id="refresh-button">

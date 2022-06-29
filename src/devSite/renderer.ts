@@ -17,7 +17,7 @@ async function makeRequest(url: string) {
 }
 
 async function getOnRenderFunction() {
-  const ON_RENDER_PATH = "./build/onRender.js";
+  const ON_RENDER_PATH = "/src/onRender.ts";
   const SOURCE_MAP_PATH = `${ON_RENDER_PATH}.map`;
 
   // Get the onRender code
