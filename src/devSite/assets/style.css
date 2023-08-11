@@ -21,12 +21,71 @@ header {
   letter-spacing: 6px;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
 #header-right-container {
   text-align: right;
 }
 
 #header-right-container > div {
   display: inline-block;
+}
+
+#header-left-container {
+  text-align: left;
+}
+
+#header-left-container > div {
+  display: inline-block;
+}
+
+#header-left-container > #variable-container {
+  display: flex;
+  gap: 12px;
+}
+
+#header-left-container > #variable-container > div {
+  display: flex;
+}
+
+#header-left-container > #variable-container > div > label {
+  color: #1f62e0;
+  background: #fff;
+  border: 1px solid #24292e1f;
+  align-items: center;
+  border-radius: 2px;
+  font-size: 12px;
+  height: 32px;
+  line-height: 32px;
+  margin-right: 4px;
+  padding: 0 8px;
+  justify-content: space-between;
+}
+
+#header-left-container > #variable-container.dark > div > label {
+  background: #181b1f;
+  border: 1px solid #ccccdc12;
+  color: #6e9fff;
+}
+
+#header-left-container > #variable-container > div > select {
+  height: 32px;
+  max-width: 100px;
+  background-color: #fff;
+  border: 1px solid #24292e03;
+  border-radius: 2px;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0 8px;
+}
+
+#header-left-container > #variable-container.dark > div > select {
+  color: #d8d9da;
+  background-color: #111217;
+  border: 1px solid #ccccdc0f;
 }
 
 .dot {

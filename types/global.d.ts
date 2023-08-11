@@ -32,11 +32,22 @@ declare global {
    */
   const theme: GrafanaTheme;
 
+  const htmlGraphics: {
+    props: {
+      replaceVariables: (value: string) => string;
+    };
+    locationService: {
+      partial: (query: Record<string, any>, replace?: boolean) => void;
+    };
+  };
+
   interface Window {
     htmlNode: typeof htmlNode;
     customProperties: typeof customProperties;
     data: typeof data;
     options: typeof options;
     theme: typeof theme;
+    htmlGraphics: typeof htmlGraphics;
+    variables: { [key: string]: string[] };
   }
 }
