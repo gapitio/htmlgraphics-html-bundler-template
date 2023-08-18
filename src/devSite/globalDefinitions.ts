@@ -5,5 +5,7 @@
 import customProperties from "../custom-properties.json";
 import { defaultPanelOptions } from "../../panelOptions.config.js";
 
-window.customProperties = customProperties;
-window.options = defaultPanelOptions;
+export function globalDefinitions() {
+  window.customProperties = customProperties;
+  window.options = defaultPanelOptions;
+}

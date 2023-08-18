@@ -1,9 +1,7 @@
 /*
   Loads onRender and executes it each time the refresh button is pressed
 */
-
-import { variables } from "./variables";
-import { updateData } from "./data";
+import { updateData } from "./htmlGraphicsDeclarations/data";
 import { updateVariables } from "./updateVariables";
 
 export function triggerRender(event: CustomEvent<unknown>) {
@@ -27,9 +25,9 @@ export function triggerRender(event: CustomEvent<unknown>) {
   document.head.append(newScript);
 }
 
-function renderHandler() {
+export function renderHandler() {
   updateData();
-  updateVariables(variables);
+  updateVariables();
 
   const refreshButton = document.querySelector("#refresh-button");
   if (!refreshButton) throw new Error("Could not find refresh button.");
@@ -48,5 +46,3 @@ function renderHandler() {
     triggerRender(panelUpdateEvent);
   });
 }
-
-renderHandler();

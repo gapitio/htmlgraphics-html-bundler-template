@@ -19,7 +19,10 @@
     "validate": "run-s typecheck lint"
   },
   "devDependencies": {
-    "@grafana/data": "^9.0.5",
+    "@grafana/data": "^10.0.3",
+    "@grafana/runtime": "^10.0.3",
+    "@grafana/scenes": "^0.24.0",
+    "@grafana/schema": "^10.0.3",
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@typescript-eslint/eslint-plugin": "^5.31.0",

@@ -1,4 +1,4 @@
-function themeHandler() {
+export function themeHandler() {
   const url = new URL(window.location.href);
   const currentTheme = url.searchParams.get("theme");
 
@@ -33,5 +33,3 @@ window.theme = {
   isDark: false,
   isLight: true,
 };
-
-themeHandler();

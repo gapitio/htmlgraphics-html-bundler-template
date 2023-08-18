@@ -71,7 +71,7 @@ header {
   color: #6e9fff;
 }
 
-#header-left-container > #variable-container > div > select {
+#header-left-container > #variable-container > div > button {
   height: 32px;
   max-width: 100px;
   background-color: #fff;
@@ -82,7 +82,7 @@ header {
   padding: 0 8px;
 }
 
-#header-left-container > #variable-container.dark > div > select {
+#header-left-container > #variable-container.dark > div > button {
   color: #d8d9da;
   background-color: #111217;
   border: 1px solid #ccccdc0f;
