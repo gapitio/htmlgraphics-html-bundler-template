@@ -71,21 +71,43 @@ header {
   color: #6e9fff;
 }
 
-#header-left-container > #variable-container > div > button {
+#header-left-container > #variable-container > div > div > button {
+  display: flex;
+  gap: 8px;
   height: 32px;
-  max-width: 100px;
+  max-width: 150px;
   background-color: #fff;
   border: 1px solid #24292e03;
   border-radius: 2px;
   -webkit-box-align: center;
   align-items: center;
   padding: 0 8px;
+  cursor: pointer;
 }
 
-#header-left-container > #variable-container.dark > div > button {
+#header-left-container > #variable-container.dark > div > div > button {
   color: #d8d9da;
   background-color: #111217;
   border: 1px solid #ccccdc0f;
+}
+
+#option-container-single {
+  flex-direction: column;
+  background-color: #fff;
+}
+
+#option-container-single > button {
+  border-width: 0px;
+  background-color: #fff;
+}
+
+#option-container-single > button:hover {
+  background-color: #eff0f0;
+  cursor: pointer;
+}
+
+#option-container-single > button.selected {
+  background-color: #eff0f0;
 }
 
 .dot {

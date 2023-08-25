@@ -2,7 +2,7 @@
   Loads onRender and executes it each time the refresh button is pressed
 */
 import { updateData } from "./htmlGraphicsDeclarations/data";
-import { updateVariables } from "./updateVariables";
+import { handleVariables } from "./updateVariables";
 
 export function triggerRender(event: CustomEvent<unknown>) {
   const onRenderUrl = "/src/onRender.ts";
@@ -27,7 +27,7 @@ export function triggerRender(event: CustomEvent<unknown>) {
 
 export function renderHandler() {
   updateData();
-  updateVariables();
+  handleVariables();
 
   const refreshButton = document.querySelector("#refresh-button");
   if (!refreshButton) throw new Error("Could not find refresh button.");

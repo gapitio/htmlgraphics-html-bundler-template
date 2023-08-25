@@ -180,18 +180,6 @@ function formatVariableValue(
   return formatItem.formatter(value, args, formatVariable);
 }
 
-function getVariableFromUrl(varInUrl: string | string[]) {
-  let text;
-  if (typeof varInUrl === "string") {
-    return varInUrl.split("=");
-  }
-  const value = varInUrl.map((v) => {
-    text = v.split("=")[0];
-    return v.split("=")[1];
-  });
-  return [text, value];
-}
-
 function _evaluateVariableExpression(
   match: string,
   variableName: string,
@@ -219,20 +207,6 @@ function _evaluateVariableExpression(
     ) {
       return replace(value);
     }
-  }
-
-  const varInUrl = window.location.search
-    .replace("?", "")
-    .split("&")
-    .filter((v) => v.includes(`var-${variableName}=`));
-
-  if (varInUrl.length > 0) {
-    [text, value] = getVariableFromUrl(
-      varInUrl.length > 1 && (variable.multi || variable.isAllValue)
-        ? varInUrl
-        : varInUrl[0]
-    );
-    return formatVariableValue(value, format, variable, text);
   }
 
   return formatVariableValue(value, format, variable, text);
@@ -268,6 +242,7 @@ export function replace(
         fmt,
         scopedVars
       );
+
       if (interpolations) {
         interpolations.push({
           match,

@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable unicorn/no-null */
 import {
+  CustomVariableModel,
   LoadingState,
   VariableHide,
   VariableOption,
-  VariableType,
 } from "@grafana/data";
 
 function getCurrentTargets(
@@ -26,11 +26,33 @@ function createVariable({
   options,
   includeAll = false,
   multi = false,
+  label,
+  id,
+  type = "custom",
+  rootStateKey = "-ABC_DEFG",
+  global = false,
+  allValue = null,
+  description = null,
+  error = null,
+  index = 1,
+  skipUrlSync = false,
+  hide = 0,
 }: {
   name: string;
   options: string[];
   includeAll?: boolean;
   multi?: boolean;
+  label?: string | undefined;
+  id?: string | undefined;
+  type?: "custom";
+  rootStateKey?: string;
+  global?: boolean;
+  allValue?: string | null | undefined;
+  description?: string | null;
+  error?: any;
+  index?: number;
+  skipUrlSync?: boolean;
+  hide?: VariableHide;
 }): CustomVariableModel {
   const opt = options.map((val, i) => {
     return { text: val, value: val, selected: i === 0 };
@@ -40,27 +62,27 @@ function createVariable({
 
   return {
     name,
-    label: name,
-    id: name,
-    type: "custom",
-    rootStateKey: "-ABC_DEFG",
-    global: false,
-    hide: 0,
-    skipUrlSync: false,
-    index: 1,
+    label: label || name,
+    id: id || name,
+    type,
+    rootStateKey,
+    global,
+    hide,
+    skipUrlSync,
+    index,
     state: LoadingState.Done,
-    error: null,
-    description: null,
+    error,
+    description,
     multi,
     includeAll,
-    allValue: null,
-    current: getCurrentTargets(opt, includeAll || multi),
+    allValue,
+    current: getCurrentTargets(opt, multi),
     options: opt,
     query: options.join(","),
   };
 }
 
-export function updateVariables() {
+export function setVariables() {
   window.variables = [
     createVariable({
       name: "Multi",
@@ -69,48 +91,20 @@ export function updateVariables() {
       includeAll: false,
     }),
     createVariable({
-      name: "includeAll",
+      name: "IncludeAllMulti",
       options: ["Var1", "Var2", "Var3"],
       multi: true,
       includeAll: true,
     }),
-    createVariable({ name: "Sample2", options: ["Var4", "Var5", "Var6"] }),
+    createVariable({
+      name: "IncludeAllSingle",
+      options: ["Var1", "Var2", "Var3"],
+      multi: false,
+      includeAll: true,
+    }),
+    createVariable({ name: "Single", options: ["Var1", "Var2", "Var3"] }),
   ];
 }
 
-export const variables: Record<string, string[]> = {
-  Sample: ["Var1", "Var2", "Var3"],
-};
-
-interface CustomVariableModel extends VariableWithMultiSupport {
-  type: "custom";
-}
-
-interface VariableWithMultiSupport extends VariableWithOptions {
-  multi: boolean;
-  includeAll: boolean;
-  allValue?: string | null;
-}
-
-export interface VariableWithOptions extends BaseVariableModel {
-  current: VariableOption | Record<string, never>;
-  options: VariableOption[];
-  query: string;
-}
-
-interface BaseVariableModel {
-  name: string;
-  label?: string;
-  id: string;
-  type: VariableType;
-  rootStateKey: string | null;
-  global: boolean;
-  hide: VariableHide;
-  skipUrlSync: boolean;
-  index: number;
-  state: LoadingState;
-  error: any | null;
-  description: string | null;
-}
 /* eslint-enable @typescript-eslint/no-explicit-any */
 /* eslint-enable unicorn/no-null */

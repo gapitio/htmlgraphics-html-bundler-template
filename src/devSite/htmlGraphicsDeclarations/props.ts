@@ -1,5 +1,3 @@
-import { variables } from "../variables";
-
 function replaceVariables(value: string) {
   const searchSplit = window.location.search.replace("?", "");
   if (searchSplit.includes(`var-${value}=`)) {
@@ -13,7 +11,9 @@ function replaceVariables(value: string) {
     return value;
   } else {
     const currentVariable = Object.keys(variables).find((key) => key === value);
-    return currentVariable ? variables[value][0] : value;
+    // incomplete
+    return currentVariable;
+    // return currentVariable ? variables[value][0] : value;
   }
 }
 

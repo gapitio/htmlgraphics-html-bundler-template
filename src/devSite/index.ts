@@ -3,11 +3,11 @@ import { globalDefinitions } from "./globalDefinitions";
 import { renderHandler } from "./renderer";
 import { htmlNodeDeclaration } from "./htmlNode";
 import { themeHandler } from "./theme";
-import { updateVariables } from "./variables";
+import { setVariables } from "./variables";
 
 globalDefinitions();
 htmlGraphicsDecl();
-updateVariables();
+setVariables();
 htmlNodeDeclaration();
 themeHandler();
 renderHandler();

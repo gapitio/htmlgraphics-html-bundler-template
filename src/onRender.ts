@@ -1,16 +1,21 @@
-const podSpan = htmlNode.querySelector<HTMLSpanElement>("#pod-span");
-const padSpan = htmlNode.querySelector<HTMLSpanElement>("#pad-span");
-const randomSpan = htmlNode.querySelector<HTMLSpanElement>("#random-span");
+const multiSpan = htmlNode.querySelector<HTMLSpanElement>("#Multi-span");
+const includeAllMultiSpan = htmlNode.querySelector<HTMLSpanElement>(
+  "#IncludeAllMulti-span"
+);
+const includeAllSingleSpan = htmlNode.querySelector<HTMLSpanElement>(
+  "#IncludeAllSingle-span"
+);
+const singleSpan = htmlNode.querySelector<HTMLSpanElement>("#Single-span");
 
-if (podSpan) podSpan.textContent = htmlGraphics.props.replaceVariables("Pod");
-if (padSpan) padSpan.textContent = htmlGraphics.props.replaceVariables("Pad");
-if (randomSpan)
-  randomSpan.textContent = htmlGraphics.props.replaceVariables("random");
-
-const buttonElt = htmlNode.querySelector<HTMLButtonElement>("#button");
-if (buttonElt)
-  buttonElt.addEventListener("click", () => {
-    htmlGraphics.locationService.partial({ [`var-Pod`]: "Herp" }, true);
-  });
-
-const result = htmlGraphics.getTemplateSrv().replace("$Sample");
+if (multiSpan)
+  multiSpan.textContent = htmlGraphics.getTemplateSrv().replace("$Multi");
+if (includeAllMultiSpan)
+  includeAllMultiSpan.textContent = htmlGraphics
+    .getTemplateSrv()
+    .replace("$IncludeAllMulti");
+if (includeAllSingleSpan)
+  includeAllSingleSpan.textContent = htmlGraphics
+    .getTemplateSrv()
+    .replace("$IncludeAllSingle");
+if (singleSpan)
+  singleSpan.textContent = htmlGraphics.getTemplateSrv().replace("$Single");
