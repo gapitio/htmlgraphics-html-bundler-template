@@ -34,6 +34,6 @@ function themeHandler() {
 window.theme = {
   isDark: false,
   isLight: true,
-}as GrafanaTheme;
+} as GrafanaTheme;
 
 themeHandler();
