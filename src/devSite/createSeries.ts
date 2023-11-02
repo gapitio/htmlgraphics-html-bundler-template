@@ -12,7 +12,7 @@ enum FieldType {
 export function createSeries(
   name: string,
   value: number,
-  refId = "A"
+  refId = "A",
 ): DataFrame {
   return {
     name,
@@ -21,11 +21,7 @@ export function createSeries(
         name: "Time",
         type: FieldType.time,
         config: {},
-        values: {
-          length: 0,
-          get: (index) => [][index],
-          toArray: () => [],
-        },
+        values: [],
         state: {
           displayName: undefined,
           scopedVars: {},
@@ -35,11 +31,7 @@ export function createSeries(
         name: "Value",
         type: FieldType.number,
         config: {},
-        values: {
-          length: 0,
-          get: (index) => [][index],
-          toArray: () => [],
-        },
+        values: [],
         state: {
           displayName: undefined,
           scopedVars: {},

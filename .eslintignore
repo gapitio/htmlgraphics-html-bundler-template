@@ -7,3 +7,4 @@ public
 coverage
 # don't lint local folder
 local
+pnpm-lock.yaml
